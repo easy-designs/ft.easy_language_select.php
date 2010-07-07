@@ -107,19 +107,27 @@ class Easy_language_select extends Fieldframe_Multi_Fieldtype {
    */
   function display_tag($params, $tagdata, $field_data, $field_settings)
   {
-    global $LANG;
-    $LANG->fetch_language_file(strtolower(__CLASS__));
-    
-    $file = PATH.'lib/languages'.EXT;
-    if ( ! file_exists($file) ) return FALSE;
-    include($file);
-    
-    $languages = array_flip( $languages );
-    $language = $languages[$field_data];
-    
-    $localized = $LANG->line($language);
-    
-    return ! empty( $localized ) ? $localized : $language;
+    if ( ! empty( $params['code'] ) &&
+         $params['code'] == 'yes' )
+    {
+      return $field_data;
+    }
+    else
+    {
+      global $LANG;
+      $LANG->fetch_language_file(strtolower(__CLASS__));
+
+      $file = PATH.'lib/languages'.EXT;
+      if ( ! file_exists($file) ) return FALSE;
+      include($file);
+
+      $languages = array_flip( $languages );
+      $language = $languages[$field_data];
+
+      $localized = $LANG->line($language);
+
+      return ! empty( $localized ) ? $localized : $language;
+    }
   }
 
 }

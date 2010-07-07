@@ -2,6 +2,14 @@
 
 Language dropdown for ExpressionEngine using FieldFrame.
 
+== Usage
+
+When setting up the field, you can choose whether it should be translated into the native language (if possible)
+
+To display the name of the language in your field: {fieldname}
+
+To display the language code: {fieldname code="yes"}
+
 == Current Version
 
 1.0 (6 July 2010)
