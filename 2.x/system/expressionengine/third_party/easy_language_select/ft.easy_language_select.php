@@ -89,9 +89,9 @@ class Easy_language_select_ft extends EE_Fieldtype {
 		# create the field
 		$this->EE->table->add_row(
 			form_label($this->EE->lang->line('translate_languages'),'localize'),
-			'<label>'.form_radio('localize', 'y', $localize).NBS.'Yes</label>' .
+			'<label>'.form_radio('localize', 'y', ($localize=='y')).NBS.'Yes</label>' .
 			NBS.NBS.NBS.NBS.NBS .
-			'<label>'.form_radio('localize', 'n', $localize).NBS.'No</label>'
+			'<label>'.form_radio('localize', 'n', ($localize=='n')).NBS.'No</label>'
 		);
 	}
 	
