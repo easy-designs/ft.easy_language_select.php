@@ -6,6 +6,8 @@ $lang = array(
 'no' => 'No',
 'yes' => 'Yes',
 
+'select_title' => 'Select a language',
+
 /* =Languages */
 'Albanian' => 'Shqiptar',
 'Arabic' => 'العربية',
